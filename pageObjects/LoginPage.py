@@ -3,7 +3,7 @@ class LoginPage:
     textbox_password_id = "password"
     button_login_xpath = "//button[contains(text(),'Log in')]"
 
-    def _init_(self, driver):
+    def __init__(self, driver):
         self.driver = driver
 
     def setUserName(self, username):

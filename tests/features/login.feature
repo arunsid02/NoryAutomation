@@ -8,7 +8,7 @@ Feature: User login into Nory
     Given the user navigate to the URL
     Then verify the title of the page
 
-#  Scenario: Login test with valid user
-#    Given the user navigate to the URL
-#    When the user enter the credentials for valid user
-#    Then user should able to login successfully
+  Scenario: Login test with valid user
+    Given the user navigate to the URL
+    When the user enter the credentials for valid user
+    Then user should able to login successfully

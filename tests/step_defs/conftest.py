@@ -12,9 +12,7 @@ def setup():
     else:
         print("specify browser name")
     driver.get(ReadConfig.getApplicationURL())
-    driver.implicitly_wait(100)
-    yield driver
-    driver.quit()
+    return driver
 
 
 def pytest_configure(config):
