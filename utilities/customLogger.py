@@ -1,11 +1,9 @@
 import logging
-import sys
-import syslog
 
 
 class LogGen:
     @staticmethod
-    def logGen():
+    def log_gen():
         logging.basicConfig(filename='automation.log',
                             format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
         logger = logging.getLogger()

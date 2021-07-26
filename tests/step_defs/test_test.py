@@ -1,34 +1,30 @@
 from pytest_bdd import scenarios, given, when, then, parsers
-import logging
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-
-# Constants
-logging.basicConfig(filename='test.log', level=logging.INFO)
-
+from utilities.customLogger import LogGen
 # Scenarios
 
 scenarios('../features/test.feature')
+
+logger = LogGen.log_gen()
 
 polly = "panda"
 
 
 @given('the DuckDuckGo home page is displayed')
-def step_impl(setup):
+def step_impl():
 
-    logging.info("Home page")
+    logger.info("---------Test Home Page----------")
 
 
 # When Steps
 
 @when(parsers.parse('the user searches for "{phrase}"'))
-def search_phrase():
-    print('to Bigboss')
+def search_phrase(phrase):
+    logger.info("---------phrase= ----------"+phrase)
 
 
 # Then Steps
 
 @then(parsers.parse('results are shown for "{phrase}"'))
 def search_results(phrase):
-    logging.info(phrase)
     assert polly == phrase
+    logger.info("polly is like phrase")

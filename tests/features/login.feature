@@ -12,3 +12,18 @@ Feature: User login into Nory
     Given the user navigate to the URL
     When the user enter the credentials for valid user
     Then user should able to login successfully
+
+  Scenario: Logout functionality test
+    Given the user navigate to the URL
+    When the user enter the credentials for valid user
+    Then user should able to login successfully
+    Then user click on logout button
+    Then user should be able to logout successfully
+
+
+  Scenario: Reset functionality test
+    Given the user navigate to the URL
+    When user click on forgot password link
+    Then user enter the email address to reset the password
+    Then user click on reset button
+    Then Email should be sent to user
